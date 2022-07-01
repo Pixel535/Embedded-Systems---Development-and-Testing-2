@@ -1,0 +1,51 @@
+C51 COMPILER V9.51   LAB2_1                                                                05/06/2022 11:01:20 PAGE 1   
+
+
+C51 COMPILER V9.51, COMPILATION OF MODULE LAB2_1
+OBJECT MODULE PLACED IN lab2_1.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lab2_1.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          
+   3          unsigned char code decimal[] = {0xFF, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06};
+   4          
+   5          void Delay(void)
+   6          {
+   7   1         unsigned char i;
+   8   1         unsigned char j;
+   9   1         for(i=0;i<150;i++)
+  10   1         {
+  11   2            for(j=0;j<200;j++)
+  12   2            { ; }
+  13   2         }
+  14   1      } 
+  15          
+  16          
+  17          void main(void)
+  18          {
+  19   1        unsigned char granica = 6;
+  20   1        unsigned char zmiennaAA = 0;
+  21   1        while(1)
+  22   1        {
+  23   2          if(zmiennaAA % 2 != 0 || zmiennaAA == 0) {P2 = decimal[zmiennaAA]; Delay();};
+  24   2          if(zmiennaAA < granica) zmiennaAA = zmiennaAA + 1;
+  25   2          else zmiennaAA = 0;
+  26   2        }
+  27   1        
+  28   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     45    ----
+   CONSTANT SIZE    =      7    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
